@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<div id="app">{{message}}</div>
+<!-- data used by string interpulation {{}} -->
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+
+
+
+
+
 <script>
-
-
-
-
-
-
-
+  // instantiates vue instance
+  // The vue model
+  new Vue({
+    el: '#app',
+    // object contains element property app which links the html
+    data: {
+      // data property already exists in vue framework
+      message: 'Hello'
+      // custom made property
+    }
+  })
 </script>
