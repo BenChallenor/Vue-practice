@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+
+  <div :style="{color: 'red', fontSize: font + 'px'}">{{message}}</div>
+  <!-- binding style dynamically -->
+  <!-- Has to be a JS style property (fontSize) not CSS (font-size) -->
+  <!-- adding px concatination -->
+
+  <div :style="styleObject">Ben</div>
+
+  <div :style="[styleObject, styleObject2]">Alice</div>
+  <!-- styleObject2 overides styleObject -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello',
+      font: 30,
+
+      styleObject: {
+        color: 'blue',
+        fontSize: '50px'
+      },
+
+      styleObject2: {
+        textAlign: 'center',
+        fontSize: '90px'
+      }
+    }
+  })
+</script>
