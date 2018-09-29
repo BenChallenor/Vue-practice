@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+
+  <postss></posts>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+  Vue.component('posts', {
+    // post component embeded in the main posts component to look after each individual post
+
+    // ensure templates have a root element, eg div
+    // v-for loops through the posts creating a dynamic post variable
+    // the key is the identifyer to let vue know that each of the objects are different
+    template: `
+        <div>
+            <ul>
+              <post v-for="post in posts" :key="post.id">{{post.title}}</post>
+            </ul>
+        </div>
+        `,
+
+    data() {
+      return {
+        posts: [
+          {id: 1, title: "post 1"},
+          {id: 2, title: "post 2"},
+          {id: 3, title: "post 3"},
+          {id: 4, title: "post 4"},
+          {id: 5, title: "post 5"},
+        ]
+      }
+    },
+
+  });
+
+  // post component embeded in posts to look after each individual post
+  Vue.component('post', {
+
+    template: '<li><slot></slot></li>'
+    // slot - whatever data is given in the posts component is displayed here
+  })
+
+
+  let vm = new Vue({
+    el: '#app',
+  })
+</script>
