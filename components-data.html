@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+
+  <!-- take data from the outside to the inside -->
+  <posts :data="34"></posts>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+  Vue.component('posts', {
+
+    // props property
+    // Props are custom attributes you can register on a component. When a value is passed to a prop attribute, it becomes a property on that component instance
+    props: ['data'],
+
+    template: `
+    <h1 @click="display">{{data}}</h1>
+    `,
+
+    data() {
+      // data function returns an object
+      return {
+        // display data in the view
+        message: "Hello World!"
+      }
+    },
+
+    methods: {
+      display() {
+        console.log("I'm an inline component");
+      }
+    }
+
+  });
+
+  let vm = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello'
+    }
+  })
+</script>
