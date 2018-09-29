@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <!-- add bootstrap -->
+</head>
+
+<body>
+
+
+  <div class="container">
+    <div id="app">
+      <!-- <h1 class="btn btn-primary">{{message}}</h1> -->
+      <!-- testing bootstrap -->
+      <form action="">
+        <div class="col-sm-6">
+          <!-- bootstrap uses 12 column grid system
+          width = 6 ie. half container -->
+          <input v-model="message" type="text" class="form-control">
+          <!-- v- are directories/attributes that contain functionality -->
+          <!-- binds to the message property -->
+          <!-- twoway binding as data is linked both ways (outside to inside) & (inside to ouside) -->
+        </div>
+      </form>
+
+      {{message}}
+
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello'
+      }
+    })
+  </script>
+
+</body>
+
+</html>

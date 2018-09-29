@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="app">
+
+  <!-- <a href="{{url}}">{{url}}</a> -->
+  <!-- doesnt work. Use: -->
+  <!-- <a v-bind:href="url">{{url}}</a> -->
+  <!-- binds the html attribute to the data -->
+  <!-- see the html change in the console -->
+  <!-- or -->
+  <a :href="url">{{url}}</a>
+
+  <h1 data="dynamicId">{{dynamicId}}</h1>
+  <h1 :data="dynamicId">{{dynamicId}}</h1>
+  <!-- binding changes attribute to 30 -->
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      dynamicId: 30,
+      url: 'http://www.eyecandyillustration.com/home/ben-challenor/'
+    }
+  })
+</script>
